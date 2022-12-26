@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Generated From makeit by leyuskc</title>
+	<script src="22.js"></script>
+	<script src="ex.js"></script>
+</head>
+<body>
+	</body>
+
+    <script>
+    	document.body.style.display='grid'
+    	document.body.style.padding='10px 10px 10px 10px'
+    document.body.style.gridTemplateColumns='auto auto auto auto auto auto'
+
+     let genPrimes = ()=>{
+     	let notPrime = new Boolean()
+     	let out = new Array()
+     	out.push(2)
+     	for(let i=3;i<=101;i+=2){
+     		notPrime=false
+     		for(let j=3;j<=Math.sqrt(i);j+=2){
+     			if(i%j==0){
+     				notPrime=true
+     				break
+     			}
+     		}
+     		if(!notPrime)out.push(i)
+     	}
+     return out
+     }
+     primes = genPrimes()
+     for(let i=0;i<102;i++){
+     	let div = document.createElement('div')
+     	div.innerHTML = `<span>${i}</span>`
+     	div.style.margin = '2px 2px 2px 2px'
+     	div.style.padding='15px 5px 15px 5px'
+     	div.style.fontSize = '24px'
+     	div.style.color = 'white'
+     	div.style.textAlign = 'center'
+     	div.style.fontWeight = 'bold'
+     	if(primes.includes(i))div.style.background='#fd5e53'
+     	else if(i%2==0)div.style.background='#21bf73'
+     	else div.style.background='#fddb3a'
+     	document.body.appendChild(div)
+
+     }
+
+    </script>
+
+</html>

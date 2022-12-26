@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Generated From makeit by leyuskc</title>
+	<script src="22.js"></script>
+	<script src="ex.js"></script>
+</head>
+<body>
+    <h1>WORLD COUNTRIES LIST</h1>
+    <div id='countries'>
+    </div>
+</body>
+
+    <script>
+    document.querySelector('#countries').style.display='grid'
+    document.querySelector('#countries').style.padding='10px 10px 10px 10px'
+   document.querySelector('#countries').style.gridTemplateColumns='auto auto auto auto auto auto'
+    document.querySelector('h1').style.columnSpan='6'
+    for(let i=0;i<102;i++){
+     	let div = document.createElement('div')
+     	div.innerHTML = `<span>COUNTRY ${i}</span>`
+     	div.style.margin = '2px 2px 2px 2px'
+     	div.style.padding='15px 5px 15px 5px'
+     	div.style.fontSize = '24px'
+     	div.style.color = 'black'
+     	div.style.textAlign = 'center'
+     	div.style.fontWeight = 'bold'
+        div.style.border='solid'
+        div.style.borderColor='#d9d9d9'
+        div.style.borderWidth='2px'
+     	document.querySelector('#countries').appendChild(div)
+
+     }
+
+    </script>
+
+</html>
