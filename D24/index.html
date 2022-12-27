@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Generated From makeit by leyuskc</title>
+	<script src="24.js"></script>
+	<script src="ex.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Calculate a weight of an object on a planet</h1>
+
+		<input type="text" id="mass" placeholder="Mass in Kilogram" />
+		<select id='selector' onchange="update(this)">
+			<option value='none'>--select planet-- </option>
+		</select>
+		<button onclick='calc()'>Calculate weight</button>
+	</header>
+	<main>
+		<div class="flex-container">
+			<div class="flex-item image">
+				<img src='earth.png' class="planet-image" />
+			</div>
+			<div class="flex-item description" id='weight'></div>
+
+		</div>
+	</main>
+	<script>
+		document.body.style.backgroundImage = 'URL(\'./galaxy.gif\')'
+		document.querySelector('.flex-container').style.display = 'grid'
+		document.querySelector('.flex-container').style.gridTemplateColumns = 'auto auto'
+		const ImageStyles = {
+				  width: '80%',
+				  display: 'grid',
+				  height: 'auto',
+				  alignContent: 'center',
+				  justifyContent: 'center',
+				  alignItems: 'center',
+				  justifyItems: 'center',
+				  paddingTop: '90px'
+				};
+		const descStyles={
+		color: 'white',
+    	fontSize: 'xx-large',
+    	textAlign: 'center',
+    	paddingTop: '200px',
+		}
+		const containerStyles = {
+			    display: 'grid',
+    			gridTemplateColumns:'auto auto',
+		}
+
+		Object.assign(document.querySelector('.planet-image').style, ImageStyles);
+		Object.assign(document.querySelector('.description').style, descStyles);
+		Object.assign(document.querySelector('.flex-container').style, containerStyles);
+		
+
+
+		const planets = ['earth.png', 'jupiter.png', 'mars.png', 'mercury.png', 'moon.png', 'neptune.png', 'pluto.png', 'saturn.png', 'uranus.png', 'venus.png']
+		const accelerationDueToGravity = {
+		    "mercury": 3.7,
+		    "venus": 8.87,
+		    "earth": 9.81,
+		    "mars": 3.711,
+		    "jupiter": 24.79,
+		    "saturn": 10.44,
+		    "uranus": 8.87,
+		    "neptune": 11.15,
+		    "pluto": 0.61
+		}
+		const calc = ()=>{
+			let selected = document.querySelector('select').value
+			let mass = document.querySelector('#mass').value
+			let weight = Math.ceil(accelerationDueToGravity[selected]*Number(mass))
+			document.querySelector('#weight').innerHTML = `The Weight Of Object On ${selected.toUpperCase()}
+			<span style="
+    display: flow-root;
+">${weight}</span>`
+
+		}
+		const update = ()=>{
+			document.querySelector('.planet-image').src = document.querySelector('select').value+'.png'
+			console.log(document.querySelector('select').value+'.png')
+			calc()
+		}
+		planets.forEach((a)=>{
+			let op = document.createElement('option')
+			op.value = a.split('.')[0]
+			op.innerHTML = a.split('.')[0]
+			document.querySelector('#selector').appendChild(op)
+		})
+
+	</script>
+</body>
+</html>

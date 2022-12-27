@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Generated From makeit by leyuskc</title>
+</head>
+<body>
+	<div >
+		<p>Press Any Keyboard Key</p>
+	</div>
+
+</body>
+<script type="text/javascript">
+	
+	document.querySelector('div').style.display = 'grid'
+	document.querySelector('div').style.justifyItems = 'center'
+	document.querySelector('div').style.marginTop = '284px'
+	document.querySelector('div').style.fontSize = 'xx-large'
+	document.querySelector('p').style.padding = '14px 84px 13px 107px'
+	document.querySelector('p').style.boxShadow = '1px 3px 10px 1px'
+	document.body.addEventListener('keydown',e=>{
+		let div = document.querySelector('div')
+		let key =e.key!=' '?e.key:'Space'
+		div.innerHTML = `<p>You Pressed ${key}</p>
+		<span>${e.keyCode}</span>
+		`
+		document.querySelector('p').style.padding = '14px 84px 13px 107px'
+		document.querySelector('p').style.boxShadow = '1px 3px 10px 1px'
+		document.querySelector('span').style.padding = '14px 53px 14px 53px'
+		document.querySelector('span').style.boxShadow = '1px 3px 10px 1px'
+	})
+
+
+
+</script>
+</html>
+<!-- END 12/27/22 02:59 -->

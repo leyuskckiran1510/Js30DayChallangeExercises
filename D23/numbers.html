@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Generated From makeit by leyuskc</title>
+</head>
+<body>
+<H1> Number Generator</H1>
+<input type="text" id='range'>
+<button onclick='run()'> Generate</button>
+<div id='numbers'>
+    </div>
+</body>
+
+    <script>
+    document.querySelector('h1').style.display='block'
+    document.querySelector('h1').style.textAlign = 'center'
+    document.querySelector('input').style.width = '200px'
+    document.querySelector('input').style.height = '30px'
+    document.querySelector('input').style.color = '#85eb85'
+    document.querySelector('input').style.border = 'solid'
+    document.querySelector('input').style.background='#85eb8570'
+    document.querySelector('button').style.width='75px'
+    document.querySelector('button').style.background='#4aff36cf'
+    document.querySelector('button').style.borderColor='#85eb85'
+    document.querySelector('button').style.boxShadow='3px 3px 12px 0px'
+    document.querySelector('button').style.height = '30px'
+    document.querySelector('#numbers').style.display = 'grid'
+    document.querySelector('#numbers').style.padding = '10px 10px 10px 10px'
+    document.querySelector('#numbers').style.gridTemplateColumns = 'auto auto auto auto auto auto'
+
+    let genPrimes = (range) => {
+        let notPrime = new Boolean()
+        let out = new Array()
+        out.push(2)
+        for (let i = 3; i <= range; i += 2) {
+            notPrime = false
+            for (let j = 3; j <= Math.sqrt(i); j += 2) {
+                if (i % j == 0) {
+                    notPrime = true
+                    break
+                }
+            }
+            if (!notPrime) out.push(i)
+        }
+        return out
+    }
+    const run = ()=>{
+        let number = document.querySelector('#numbers')
+        number.innerHTML = ''
+        let range = Number(document.querySelector('#range').value)
+        primes = genPrimes(range)
+        for (let i = 0; i <range; i++) {
+            let div = document.createElement('div')
+            div.innerHTML = `<span>${i}</span>`
+            div.style.margin = '2px 2px 2px 2px'
+            div.style.padding = '15px 5px 15px 5px'
+            div.style.fontSize = '24px'
+            div.style.color = 'white'
+            div.style.textAlign = 'center'
+            div.style.fontWeight = 'bold'
+            if (primes.includes(i)) div.style.background = '#fd5e53'
+            else if (i % 2 == 0) div.style.background = '#21bf73'
+            else div.style.background = '#fddb3a'
+            number.appendChild(div)
+    
+        }}
+    </script>
+
+</html>
