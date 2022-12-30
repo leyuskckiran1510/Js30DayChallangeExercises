@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Generated From makeit by leyuskc</title>
+	<style>
+	
+		    body{overflow-x: hidden;}
+			button {
+				border: solid;
+		        border-width: 1px;
+		        border-radius: 29px;
+		        background: #ffffff;
+		        padding: 5px 14px 5px 13px;
+		        margin: 2px 3px 6px -9px;
+		    }
+			button:active {
+		    			background: #9acfef;
+						}
+			.active{
+				background: red;
+				}
+			.data{
+				background-image: linear-gradient(168deg, rgba(245,70,66, 0.75), rgba(8,83,156, 0.75)),URL('./d.jpg');
+    width: 100%;
+    height: 12vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 7px 12px 9px 10px;
+    text-align: center;
+    padding: 68px 2px 37px 2px;
+    background-position: 0px 0px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: x-large;
+    box-shadow: 6px 5px 10px 1px #605151;
+    border: solid #ff000000;
+    border-width: 1px;
+    border-radius: 8px 62px 0px 70px;
+}
+
+	</style>
+
+</head>
+<body style="background: linear-gradient(45deg, #4e4d4de6, #dbc6b191);">
+<header style="background-image: URL('./globe-2.jpg');
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px 1% 0px 25%;
+    margin: -10px -10px 0px -8px;
+        box-shadow: -1px 16px 20px 1px #dbc6b1;
+;"> 
+	<h1>WORLD COUNTRIES LIST</h1>
+	<h2>Total Number Of Countries<span id='total'></span></h2>
+	<button onclick="first(1);update()" id='a'> Starts With</button>
+	<button onclick="check(1);update()"  id='b'>Has Letters</button>	
+	<button onclick="toggleSort(1);update()"  id='c'>Sort(aces/decs)</button><br>	
+	<input class="field" type="text" oninput="update()" style ="background: #ffffff;
+    border: solid #fffdfd8a;
+    border-radius: 52px;
+    border-width: 1px;
+    margin: 9px 9px 7px -6px;
+    padding: 9px 17px 9px 12px;
+    width: 264px;">
+</header>
+<section>
+	<div class='grid' style="
+	margin: 22px 2px 2px 2px;
+	display:grid;
+	grid-template-columns: repeat(6, 1fr);
+/*	grid-auto-rows: 10px;*/
+	grid-gap: 20px;">
+		
+	</div>
+</section>
+	<script src="country.js"></script>
+	<script src="26.js"></script>
+
+
+</body>
+</html>
